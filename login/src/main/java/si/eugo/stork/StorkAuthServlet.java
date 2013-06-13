@@ -19,22 +19,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Properties;
 
 public class StorkAuthServlet extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
+
+
 	private static final Logger log = LoggerFactory.getLogger(StorkAuthServlet.class.getName());
 
-	private String SAMLResponse;
-	private String samlResponseXML;
 
 	private ArrayList<PersonalAttribute> attrList;
 
-	private static Properties configs;
-	private static String spId;
-	private static String spUrl;
-	private String service;
-	private String citizen;
 
     @Inject
     private AuthenticatedUser authenticatedUser;
@@ -42,28 +37,13 @@ public class StorkAuthServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 
 		STORKAuthnResponse authnResponse = null;
 		IPersonalAttributeList personalAttributeList = null;
 
-		// LOG.info("[execute] Start");
-		try {
-			configs = SPUtil.loadConfigs(Constants.SP_PROPERTIES);
-		} catch (IOException e) {
-			throw new ApplicationSpecificServiceException(
-					"Could not load configuration file", e.getMessage());
-		}
-
-		spId = configs.getProperty(Constants.SP_ID);
-		spUrl = configs.getProperty(Constants.SP_URL);
-
-		// setService( (String)request.getSession().getAttribute("service"));
-		// setCitizen( (String)request.getSession().getAttribute("citizen"));
 
 		byte[] decSamlToken = PEPSUtil.decodeSAMLToken(req
 				.getParameter("SAMLResponse"));
-		samlResponseXML = new String(decSamlToken);
 
 		STORKSAMLEngine engine = STORKSAMLEngine.getInstance(Constants.SP_CONF);
 
@@ -90,11 +70,9 @@ public class StorkAuthServlet extends HttpServlet {
 			HashMap<String, PersonalAttribute> storkAttrs = new HashMap<String, PersonalAttribute>();
 			HashMap<String, List<String>> storkSessionAttrMap = new HashMap<String, List<String>>();
 			for (PersonalAttribute pa : attrList) {
-				System.out.println("PersonalAttribute Friendly Name = "
+				log.debug("PersonalAttribute Friendly Name = "
 						+ pa.getFriendlyName());
-				System.out.println("PersonalAttribute Name = " + pa.getName());
-				// System.out.println("PersonalAttribute Value = " +
-				// pa.getValue().get(0));
+				log.debug("PersonalAttribute Name = " + pa.getName());
 				if (pa.getValue() != null) {
 					storkAttrs.put(pa.getName(), pa);
 					if (pa.getValue() != null)
@@ -122,25 +100,11 @@ public class StorkAuthServlet extends HttpServlet {
 
             authenticatedUser.login(storkUser);
 
-			log.info("Calling Servlet Login!");
-
-			req.login(storkUser.getUsername(), storkUser.geteId());
+            //TODO Decide on JAAS
+			//req.login(storkUser.getUsername(), storkUser.geteId());
 			
-			log.info("Programatic login finished!\n");
-			HttpSession session = req.getSession(false);
-			if (session != null) {
-				log.info("HttpSession != null\n");
-				log.info("Authenticated user = " + req.getRemoteUser());
-				if (req.getRemoteUser() != null)
-					session.setAttribute("storkAttributeMap",
-							storkSessionAttrMap);
-			}else{
-				log.info("ŠIT HttpSession == null\n");
-			}
-			String rUrl = (String) req.getSession().getAttribute("initialURI");
-			if(rUrl==null)
-				rUrl = "/spocs/pages/holder.jsf";
-			resp.sendRedirect(rUrl);
+			//TODO InitURL
+			resp.sendRedirect("main.xhtml");
 		}
 	}
 
