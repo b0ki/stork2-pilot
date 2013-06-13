@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import eu.stork.peps.auth.commons.PersonalAttribute;
 
+
 public class StorkUser {
 	private String username;
 	private String givenName;

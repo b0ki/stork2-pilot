@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Properties;
 
 import javax.servlet.ServletException;
@@ -34,13 +33,9 @@ public class StorkServlet extends HttpServlet {
 	private static final Logger log = LoggerFactory.getLogger(StorkServlet.class.getName());
 
 	private String SAMLRequest;
-	private String samlRequestXML;
 
 	private static Properties configs;
 	private static SpocsStorkConfig xconfigs;
-	private static ArrayList<Country> countries;
-	private static ArrayList<String> attributeNameList;
-	private static ArrayList<PersonalAttribute> attributeList;
 
 	private static String spId;
 	private static String spSector;
@@ -50,31 +45,14 @@ public class StorkServlet extends HttpServlet {
 
 	/* Requested parameters */
 	private String pepsUrl;
-	private String pepsUrl2;
 	private String qaa;
 	private String citizen;
 	private String returnUrl;
-	private String service;
-
-	private String spUrl;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
-		//
-		// StorkThreadLocal.setStorkUser(new StorkUser("ROOT"));
-		//
-		// log.info("Success");
-		//
-		// req.login("root","gtn");
-		// super.doGet(req, resp);
-		// LOG.info("[execute] Start");
 		try {
-//			log.info("Trying SPUtil.loadConfigs(Constants.SP_PROPERTIES);! chgd at 12:47");
-//			configs = SPUtil.loadConfigs(Constants.SP_PROPERTIES);
-			
 			File f = new File(System.getProperty("jboss.server.config.dir"), "sp.properties");
 			InputStream is = new FileInputStream(f);
 			configs = SPUtil.loadConfigs(is);
@@ -85,7 +63,7 @@ public class StorkServlet extends HttpServlet {
 		}
 		log.info("Trying SPUtil.loadConfigs(Constants.SP_PROPERTIES);! SUCCESS");
 
-		spUrl = configs.getProperty(Constants.SP_URL);
+		configs.getProperty(Constants.SP_URL);
 
 		returnUrl = configs.getProperty(Constants.SP_RETURN);
 		qaa = configs.getProperty(Constants.SP_QAALEVEL);
@@ -102,7 +80,6 @@ public class StorkServlet extends HttpServlet {
 		try {
 			JAXBContext ctx = JAXBContext.newInstance(SpocsStorkConfig.class);
 			File f = new File(System.getProperty("jboss.server.config.dir"), "storkconfig.xml");
-			InputStream is = SPUtil.loadConfInputStream("storkconfig.xml");// this.getClass().getClassLoader().getResourceAsStream("storkconfig.xml");
 			xconfigs = (SpocsStorkConfig) ctx.createUnmarshaller().unmarshal(f);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -123,135 +100,6 @@ public class StorkServlet extends HttpServlet {
 			}
 		}
 
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("eIdentifier");
-		// att.setIsRequired(true);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("givenName");
-		// att.setIsRequired(true);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("surname");
-		// att.setIsRequired(true);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("eMail");
-		// att.setIsRequired(true);
-		// pAttList.add(att);
-		// }
-		// // if (service.equals("display")) {
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("countryCodeOfBirth");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("nationalityCode");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("gender");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("dateOfBirth");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		//
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("inheritedFamilyName");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		//
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("adoptedFamilyName");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("maritalStatus");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("textResidenceAddress");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("canonicalResidenceAddress");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("title");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("residencePermit");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("pseudonym");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("age");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("citizenQAALevel");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("fiscalNumber");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-		// {
-		// PersonalAttribute att = new PersonalAttribute();
-		// att.setName("citizen509Certificate");
-		// att.setIsRequired(false);
-		// pAttList.add(att);
-		// }
-
-		// }
-
-		// request.getSession().setAttribute("service", service);
-		// request.getSession().setAttribute("citizen", citizen);
 
 		byte[] token = null;
 
@@ -272,11 +120,9 @@ public class StorkServlet extends HttpServlet {
 		try {
 			STORKSAMLEngine engine = STORKSAMLEngine
 					.getInstance(Constants.SP_CONF);
-			System.out
-					.println("STORKSAMLEngine.getInstance(Constants.SP_CONF); DONE ");
+			log.debug("STORKSAMLEngine.getInstance(Constants.SP_CONF); DONE ");
 			authnRequest = engine.generateSTORKAuthnRequest(authnRequest);
-			System.out
-					.println("engine.generateSTORKAuthnRequest(authnRequest); DONE");
+			log.debug("engine.generateSTORKAuthnRequest(authnRequest); DONE");
 		} catch (STORKSAMLEngineException e) {
 			throw new ApplicationSpecificServiceException(
 					"Could not generate token for Saml Request",
@@ -286,7 +132,6 @@ public class StorkServlet extends HttpServlet {
 		token = authnRequest.getTokenSaml();
 
 		SAMLRequest = PEPSUtil.encodeSAMLToken(token);
-		samlRequestXML = new String(token);
 
 		resp.setContentType("text/html; charset=UTF-8");
 
@@ -302,7 +147,6 @@ public class StorkServlet extends HttpServlet {
 				+ SAMLRequest + "\"/>");
 		out.write("<input type=hidden name=\"country\" value=\"" + citizen
 				+ "\"/>");
-		//out.write("<input type=\"submit\"/>");
 		out.write("</form>");
 		out.write("</body>");
 		out.write("</html>");
