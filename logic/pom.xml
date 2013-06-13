@@ -18,7 +18,11 @@
         <dependency>
             <groupId>si.gov.mnz.blp.taxid</groupId>
             <artifactId>model</artifactId>
-            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>si.gov.mnz.blp.taxid</groupId>
+            <artifactId>login</artifactId>
+            <type>ejb</type>
         </dependency>
 
         <!-- This is needed for @Push -->

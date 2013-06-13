@@ -68,6 +68,12 @@
             </dependency>
             <dependency>
                 <groupId>si.gov.mnz.blp.taxid</groupId>
+                <artifactId>login</artifactId>
+                <type>ejb</type>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>si.gov.mnz.blp.taxid</groupId>
                 <artifactId>logic</artifactId>
                 <type>ejb</type>
                 <version>${project.version}</version>
