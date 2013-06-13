@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<comment>HWModule sign with interface PKCS11.</comment>
+	<entry key="configurationFile">p11Safenet.cfg</entry>
+	<entry key="keyPassword">A2BAD4C09366FD7D704FCBCA7E48D51D</entry>
+	<entry key="issuer">OU=sigov-ca, O=state-institutions, C=SI</entry>	
+	<entry key="serialNumber">3a5ded75</entry>
+        <entry key="keystoreType">PKCS11</entry>
+</properties>

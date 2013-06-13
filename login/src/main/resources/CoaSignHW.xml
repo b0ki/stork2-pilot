@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+      <comment>HWModule sign with interface PKCS11.</comment>
+
+      <entry key="configurationFile">p11ConfCoa.cfg</entry>
+      <entry key="keyPassword">29762A438561AEE1D7622305DACE5543</entry>
+      <!-- <entry key="keyPassword">A2BAD4C09366FD7D704FCBCA7E48D51D</entry> -->
+	<entry key="issuer">OU=sitest-ca, O=state-institutions, C=si</entry>
+
+	<!-- <entry key="serialNumber">40B2B9F7</entry> -->
+	<!-- pred 2010-05-29 MR. <entry key="serialNumber">1085454839</entry> -->
+
+	<entry key="serialNumber">40b2d58e</entry>
+
+      <entry key="keystoreType">PKCS11</entry>
+
+      <entry key="keystorePath">/opt/keystores/storkDemoKeys-coa-si.jks</entry>
+        <entry key="keyStorePassword">coa-test</entry>
+
+
+</properties>

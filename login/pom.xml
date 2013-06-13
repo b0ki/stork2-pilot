@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>taxid</artifactId>
+		<groupId>si.gov.mnz.blp.taxid</groupId>
+		<version>0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>login</artifactId>
+
+	<dependencies>
+
+		<!-- Stork Commons -->
+		<dependency>
+			<groupId>eu.stork</groupId>
+			<artifactId>stork-commons</artifactId>
+		</dependency>
+
+		<!-- Stork SAML Engine -->
+		<dependency>
+			<groupId>eu.stork</groupId>
+			<artifactId>saml-engine</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>xml-resolver</groupId>
+			<artifactId>xml-resolver</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.opensaml</groupId>
+			<artifactId>opensaml</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<finalName>login</finalName>
+		<resources>
+			<resource>
+				<directory> ${project.basedir}/src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory> ${project.basedir}/src/main/config/embedded</directory>
+			</resource>
+			<resource>
+				<directory> ${project.basedir}/src/main/config/signsw</directory>
+			</resource>
+		</resources>
+	</build>
+
+</project>

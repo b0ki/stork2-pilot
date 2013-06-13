@@ -30,6 +30,7 @@
         <module>model</module>
         <module>logic</module>
         <module>web</module>
+        <module>login</module>
     </modules>
 
     <url>http://www.eugo.gov.si</url>
@@ -53,6 +54,8 @@
             </plugin>
         </plugins>
     </build>
+    
+    
 
     <dependencyManagement>
         <dependencies>
@@ -101,7 +104,45 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            
+            <!-- STORK -->
+        <!-- Stork Commons -->
+		<dependency>
+			<groupId>eu.stork</groupId>
+			<artifactId>stork-commons</artifactId>
+			<version>${stork-commons.version}</version>
+		</dependency>
+
+		<!-- Stork SAML Engine -->
+		<dependency>
+			<groupId>eu.stork</groupId>
+			<artifactId>saml-engine</artifactId>
+			<version>${stork-saml.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>2.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>xml-resolver</groupId>
+			<artifactId>xml-resolver</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.opensaml</groupId>
+			<artifactId>opensaml</artifactId>
+			<version>2.5.1-1</version>
+		</dependency>
+		<!-- END OF STORK -->
         </dependencies>
+        
     </dependencyManagement>
 
     <dependencies>
@@ -235,8 +276,11 @@
         <!-- maven-compiler-plugin -->
         <maven.compiler.target>1.6</maven.compiler.target>
         <maven.compiler.source>1.6</maven.compiler.source>
+        
+        <!-- Strork versions -->
+        <stork-commons.version>0.5.1</stork-commons.version>
+		<stork-saml.version>0.5.3</stork-saml.version>
     </properties>
-
 
 
 </project>

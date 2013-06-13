@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<comment>SWModule sign with JKS.</comment>
+	<entry key="keystorePath">/opt/keystores/storkDemoKeys-coa-si.jks</entry>
+	<entry key="keyStorePassword">coa-test</entry>
+	<entry key="keyPassword">coa-test</entry>
+	<entry key="issuer">OU=sitest-ca, O=state-institutions, C=si</entry>	
+	<entry key="serialNumber">40B2B9FA</entry>		
+	<entry key="keystoreType">JKS</entry>
+</properties>
+
