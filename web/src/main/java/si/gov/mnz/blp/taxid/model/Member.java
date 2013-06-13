@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.kitchensinkrf.model;
+package si.gov.mnz.blp.taxid.model;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -30,7 +30,7 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 @Entity
 @XmlRootElement
-@Table(name = "MemberRichFacesKitchensink", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "Users", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Member implements Serializable {
 
     @Id

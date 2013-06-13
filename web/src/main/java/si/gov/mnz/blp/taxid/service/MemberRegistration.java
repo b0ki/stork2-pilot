@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.kitchensinkrf.service;
+package si.gov.mnz.blp.taxid.service;
 
-import org.jboss.as.quickstarts.kitchensinkrf.model.Member;
+import si.gov.mnz.blp.taxid.model.Member;
 
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;

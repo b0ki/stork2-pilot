@@ -63,7 +63,7 @@
  //
  // *******************************************
  */
-package org.jboss.as.quickstarts.kitchensinkrf.util;
+package si.gov.mnz.blp.taxid.util;
 
 import java.io.Serializable;
 

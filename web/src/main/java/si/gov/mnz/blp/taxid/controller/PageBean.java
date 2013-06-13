@@ -14,20 +14,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.kitchensinkrf.rest;
+package si.gov.mnz.blp.taxid.controller;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+import java.io.Serializable;
 
 /**
- * A class extending {@link Application} and annotated with @ApplicationPath is the Java EE 6 "no XML" approach to activating
- * JAX-RS.
+ * The PageBean maps the location hash from the browser into a jsf view-id
  * 
- * <p>
- * Resources are served relative to the servlet path specified in the {@link ApplicationPath} annotation.
- * </p>
+ * @author <a href="http://community.jboss.org/people/bleathem">Brian Leathem</a>
  */
-@ApplicationPath("/rest")
-public class JaxRsActivator extends Application {
-    /* class body intentionally left blank */
+@Named
+@SessionScoped
+public class PageBean implements Serializable {
+    private static final long serialVersionUID = 281964859634018452L;
+
+    private String location;
+    private String page;
+
+    public String getPage() {
+        return page;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+        this.page = String.format("/mobile/%s.xhtml", location);
+    }
 }

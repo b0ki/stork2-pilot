@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.kitchensinkrf.test;
+package si.gov.mnz.blp.taxid.test;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.as.quickstarts.kitchensinkrf.model.Member;
-import org.jboss.as.quickstarts.kitchensinkrf.service.MemberRegistration;
-import org.jboss.as.quickstarts.kitchensinkrf.util.Resources;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import si.gov.mnz.blp.taxid.model.Member;
+import si.gov.mnz.blp.taxid.service.MemberRegistration;
+import si.gov.mnz.blp.taxid.util.Resources;
 
 import javax.inject.Inject;
 import java.util.logging.Logger;

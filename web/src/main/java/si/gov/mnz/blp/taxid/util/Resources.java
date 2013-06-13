@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.kitchensinkrf.util;
+package si.gov.mnz.blp.taxid.util;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;

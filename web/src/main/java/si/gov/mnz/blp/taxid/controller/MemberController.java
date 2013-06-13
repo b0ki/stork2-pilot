@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.kitchensinkrf.controller;
+package si.gov.mnz.blp.taxid.controller;
 
-import org.jboss.as.quickstarts.kitchensinkrf.model.Member;
-import org.jboss.as.quickstarts.kitchensinkrf.service.MemberRegistration;
 import org.richfaces.cdi.push.Push;
+import si.gov.mnz.blp.taxid.model.Member;
+import si.gov.mnz.blp.taxid.service.MemberRegistration;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.event.Event;
