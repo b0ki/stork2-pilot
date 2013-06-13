@@ -1,0 +1,191 @@
+<!--
+    JBoss, Home of Professional Open Source
+    Copyright 2013, Red Hat, Inc. and/or its affiliates, and individual
+    contributors by the @authors tag. See the copyright.txt in the
+    distribution for a full listing of individual contributors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>RichFaces Starter Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <h:outputStylesheet name="style.css" library="css"/>
+    <h:outputStylesheet name="dropkick.css" library="css"/>
+    <h:outputStylesheet name="jquery.fancybox-1.3.4.css" library="css"/>
+    <h:outputScript target="head" name="showMessage.js" library="js"/>
+    <h:outputScript target="head" name="modernizr-custom.js" library="js" />
+
+
+    <title>Get Tax Number in SLOWenien</title>
+
+    <h:outputLink rel="shorcut icon" value="favicon.ico" />
+</h:head>
+<h:body class="service-page">
+
+    <div id="container">
+
+
+        <div class="eugo-bar">
+            <div class="inner">
+                <a href="#" class="rs">
+
+                    <h:graphicImage alt="Republika Slovenija" library="gfx" name="rs.png" />
+                    Republika Slovenija
+                </a>
+            </div>
+        </div>
+        <header class="header vcard" role="banner">
+            <div class="inner">
+                <h1 id="brand">
+                    <a class="url fn org" href="http://www.eugo.gov.si/">
+                        <h:graphicImage library="gfx" name="logo-s-print.png" class="logo-print" alt="Doing Business in Slovenia" width="176" height="49" />
+                    </a>
+                </h1>
+
+
+
+                <div class="login">
+                    <a href="#" class="btn logout">Logout</a>
+                    <a href="#" class="btn new">New user</a>
+                    <div class="user">
+                        <span class="name">Marija Vzorec</span>
+                        <span class="email">marija.vzorec@gmail.com</span>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <div class="main" role="main">
+            <div class="inner">
+                <article class="content-container">
+                    <h1>Create a new user account</h1>
+                    <p class="lead">Non-residents of the Republic of Slovenia have to obtain a Slovenian tax number before starting<br /> any procedures of setting up a business in Slovenia.</p>
+
+                    <div class="content-module">
+                        <div id="content">
+                            <ui:insert name="content">
+                                [Template content will be inserted here]
+                            </ui:insert>
+                        </div>
+                        <form class="form">
+                            <fieldset>
+                                <h3 class="category-title">Personal information</h3>
+                                <ul>
+                                    <li class="row">
+                                        <div class="item">
+                                            <label for="name">Name</label>
+                                            <input type="text" class="text" id="name" value=""/>
+                                        </div>
+                                        <div class="item right">
+                                            <label for="surname">Surname</label>
+                                            <input type="text" class="text" id="surname" value=""/>
+                                        </div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="item">
+                                            <label for="gender">Gender</label>
+                                            <select id="gender">
+                                                <option>Female</option>
+                                                <option>Male</option>
+                                            </select>
+                                        </div>
+                                        <div class="item right">
+                                            <label for="date">Date of birth</label>
+                                            <input type="number" class="text" id="date" value=""/>
+                                            <span class="helper">dd.mm.yyyy</span>
+                                        </div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="item">
+                                            <label for="place">Place of birth</label>
+                                            <input type="text" class="text" id="place" value=""/>
+                                        </div>
+                                        <div class="item right">
+                                            <label for="country">Country of birth</label>
+                                            <select id="country">
+                                                <option>Slovenia</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="item">
+                                            <label for="citizenship">Citizenship</label>
+                                            <select id="citizenship">
+                                                <option>- Select one -</option>
+                                            </select>
+                                        </div>
+                                        <div class="item right">
+                                            <label for="status">Status</label>
+                                            <select id="status">
+                                                <option>- Select one -</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                            <ul>
+                                <li class="row actions">
+                                    <a href="#" class="back cancel">Cancel</a>
+                                    <input class="btn" type="submit" value="Next step" />
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+
+                </article>
+                <aside>
+                    <div class="progress-bar">
+                        <h3>Your Progress</h3>
+                        <div class="progress-container">
+                            <div style="width:25%" class="progress"></div>
+                        </div>
+                    </div>			<div class="help">
+                    <h4>Using your digital certificate gives you more tools and options</h4>
+                    <p class="no-margin">Donec molestie adipiscing felis eu pharetra. In laoreet pulvinar tellus at pretium.</p>
+                </div>
+
+                </aside>
+            </div>
+        </div>
+
+
+    </div>
+    <footer class="footer" role="contentinfo">
+        <div class="inner">
+
+
+            <small class="copyrights">
+                <em>© 2011 Ministrstvo za javno upravo Republike Slovenije<span class="separator">I</span><a href="">Impressum</a><span class="separator">I</span><a href="">Legal Notice</a><span class="separator">I</span>Authors: <span class="vcard author"><a href="http://www.innovatif.com" class="url fn org" title="Page author" target="_blank">Innovatif</a></span>
+                </em>
+            </small>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <h:outputScript target="head" name="jquery.placeholder.min.js" library="js" />
+    <h:outputScript target="head" name="jquery.fancybox-1.3.4.pack.js" library="js" />
+    <h:outputScript target="head" name="jquery.qtip.min.js" library="js" />
+    <h:outputScript target="head" name="jquery-ui-1.9.2.custom.min.js" library="js" />
+    <h:outputScript target="head" name="jquery.dropkick-1.0.0.js" library="js" />
+    <h:outputScript target="head" name="autocomplete.js" library="js" />
+    <h:outputScript target="head" name="script.js" library="js" />
+
+    <noscript>Your browser does not support JavaScript!</noscript>
+</h:body>
+</html>
