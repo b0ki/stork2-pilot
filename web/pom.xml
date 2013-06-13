@@ -16,6 +16,11 @@
     <name>TaxNumber Web</name>
 
     <dependencies>
+        <dependency>
+            <groupId>si.gov.mnz.blp.taxid</groupId>
+            <artifactId>logic</artifactId>
+            <type>ejb</type>
+        </dependency>
 
         <!-- First declare the APIs we depend on and need for compilation.
             All of them are provided by JBoss AS 7 -->
@@ -117,28 +122,6 @@
         <dependency>
             <groupId>org.ocpsoft.rewrite</groupId>
             <artifactId>rewrite-integration-cdi</artifactId>
-        </dependency>
-
-        <!-- Needed for running tests (you may also use TestNG) -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- Optional, but highly recommended -->
-        <!-- Arquillian allows you to test enterprise code such as EJBs and
-            Transactional(JTA) JPA from JUnit/TestNG -->
-        <dependency>
-            <groupId>org.jboss.arquillian.junit</groupId>
-            <artifactId>arquillian-junit-container</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.arquillian.protocol</groupId>
-            <artifactId>arquillian-protocol-servlet</artifactId>
-            <scope>test</scope>
         </dependency>
 
     </dependencies>
