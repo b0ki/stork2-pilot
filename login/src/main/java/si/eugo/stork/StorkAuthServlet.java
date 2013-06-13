@@ -1,28 +1,25 @@
 package si.eugo.stork;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Properties;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import si.eugo.stork.StorkServlet;
-
 import eu.stork.peps.auth.commons.IPersonalAttributeList;
 import eu.stork.peps.auth.commons.PEPSUtil;
 import eu.stork.peps.auth.commons.PersonalAttribute;
 import eu.stork.peps.auth.commons.STORKAuthnResponse;
 import eu.stork.peps.auth.engine.STORKSAMLEngine;
 import eu.stork.peps.exceptions.STORKSAMLEngineException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Properties;
 
 public class StorkAuthServlet extends HttpServlet {
 
@@ -38,6 +35,9 @@ public class StorkAuthServlet extends HttpServlet {
 	private static String spUrl;
 	private String service;
 	private String citizen;
+
+    @Inject
+    private AuthenticatedUser authenticatedUser;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -120,7 +120,7 @@ public class StorkAuthServlet extends HttpServlet {
 			}
 			storkUser.setStorkAttrs(storkAttrs);
 
-			StorkThreadLocal.setStorkUser(storkUser);
+            authenticatedUser.login(storkUser);
 
 			log.info("Calling Servlet Login!");
 
