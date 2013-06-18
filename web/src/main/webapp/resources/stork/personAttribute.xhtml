@@ -1,17 +1,22 @@
-<ui:component xmlns=""
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
               xmlns:ui="http://java.sun.com/jsf/facelets"
-              xmlns:composite="http://java.sun.com/jsf/composite" xmlns:h="http://java.sun.com/jsf/html">
+              xmlns:composite="http://java.sun.com/jsf/composite"
+              xmlns:h="http://java.sun.com/jsf/html"
+        >
 
     <composite:interface>
         <composite:attribute name="componentId" required="true"/>
         <composite:attribute name="label" required="true"/>
         <composite:attribute name="attributeValue" required="true"/>
+        <composite:attribute name="right" required="false" default="false"/>
     </composite:interface>
 
     <composite:implementation>
-        <h:outputLabel for="#{cc.attrs.componentId}" value="#{cc.attrs.label}"/>
-        <h:inputText id="#{cc.attrs.componentId}" value="#{cc.attrs.attributeValue}" disabled="true"/>
-        <h:message for="#{cc.attrs.componentId}" errorClass="invalid"/>
+        <div class="item#{cc.attrs.right ? ' right' : ''}">
+            <h:outputLabel for="#{cc.attrs.componentId}" value="#{cc.attrs.label}"/>
+            <h:inputText styleClass="text" id="#{cc.attrs.componentId}" value="#{cc.attrs.attributeValue}" disabled="true"/>
+            <h:message for="#{cc.attrs.componentId}" errorClass="invalid"/>
+        </div>
     </composite:implementation>
 
 </ui:component>

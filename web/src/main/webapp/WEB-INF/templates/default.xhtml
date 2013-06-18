@@ -73,78 +73,13 @@
         <div class="main" role="main">
             <div class="inner">
                 <article class="content-container">
-                    <h1>Create a new user account</h1>
+                    <h1>Request a tax number</h1>
                     <p class="lead">Non-residents of the Republic of Slovenia have to obtain a Slovenian tax number before starting<br /> any procedures of setting up a business in Slovenia.</p>
 
                     <div class="content-module">
-                        <div id="content">
-                            <ui:insert name="content">
-                                [Template content will be inserted here]
-                            </ui:insert>
-                        </div>
-                        <form class="form">
-                            <fieldset>
-                                <h3 class="category-title">Personal information</h3>
-                                <ul>
-                                    <li class="row">
-                                        <div class="item">
-                                            <label for="name">Name</label>
-                                            <input type="text" class="text" id="name" value=""/>
-                                        </div>
-                                        <div class="item right">
-                                            <label for="surname">Surname</label>
-                                            <input type="text" class="text" id="surname" value=""/>
-                                        </div>
-                                    </li>
-                                    <li class="row">
-                                        <div class="item">
-                                            <label for="gender">Gender</label>
-                                            <select id="gender">
-                                                <option>Female</option>
-                                                <option>Male</option>
-                                            </select>
-                                        </div>
-                                        <div class="item right">
-                                            <label for="date">Date of birth</label>
-                                            <input type="number" class="text" id="date" value=""/>
-                                            <span class="helper">dd.mm.yyyy</span>
-                                        </div>
-                                    </li>
-                                    <li class="row">
-                                        <div class="item">
-                                            <label for="place">Place of birth</label>
-                                            <input type="text" class="text" id="place" value=""/>
-                                        </div>
-                                        <div class="item right">
-                                            <label for="country">Country of birth</label>
-                                            <select id="country">
-                                                <option>Slovenia</option>
-                                            </select>
-                                        </div>
-                                    </li>
-                                    <li class="row">
-                                        <div class="item">
-                                            <label for="citizenship">Citizenship</label>
-                                            <select id="citizenship">
-                                                <option>- Select one -</option>
-                                            </select>
-                                        </div>
-                                        <div class="item right">
-                                            <label for="status">Status</label>
-                                            <select id="status">
-                                                <option>- Select one -</option>
-                                            </select>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </fieldset>
-                            <ul>
-                                <li class="row actions">
-                                    <a href="#" class="back cancel">Cancel</a>
-                                    <input class="btn" type="submit" value="Next step" />
-                                </li>
-                            </ul>
-                        </form>
+                        <ui:insert name="content">
+                            [Template content will be inserted here]
+                        </ui:insert>
                     </div>
 
                 </article>

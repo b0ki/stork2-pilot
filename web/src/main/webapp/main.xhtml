@@ -6,19 +6,38 @@
                 xmlns:stork="http://java.sun.com/jsf/composite/stork"
         >
     <ui:define name="content">
-        <h:form id="reg">
-            <h:messages globalOnly="true"/>
 
-            <stork:personAttribute label="Given Name:" componentId="giveName" attributeValue="#{mainPage.person.givenName}"/>
-            <stork:personAttribute label="Family Name:" componentId="surname" attributeValue="#{mainPage.person.surname}"/>
-            <stork:personAttribute label="Date of Birth:" componentId="dateOfBirth" attributeValue="#{mainPage.person.dateOfBirth}"/>
-            <stork:personAttribute label="Gender:" componentId="gender" attributeValue="#{mainPage.person.gender}"/>
-            <stork:personAttribute label="Nationality Code:" componentId="nationalityCode" attributeValue="#{mainPage.person.nationalityCode}"/>
-            <stork:personAttribute label="Birth Country Coide:" componentId="countryCodeOfBirth" attributeValue="#{mainPage.person.countryCodeOfBirth}"/>
-            <stork:personAttribute label="Residence Address:" componentId="textResidenceAddress" attributeValue="#{mainPage.person.textResidenceAddress}"/>
-            <stork:personAttribute label="Canonical Residence Address:" componentId="canonicalResidenceAddress" attributeValue="#{mainPage.person.canonicalResidenceAddress}"/>
+        <h:messages globalOnly="true"/>
 
-            <h:commandButton id="register" action="#{mainPage.requestTaxId}" value="Register" styleClass="register"/>
+        <h:form id="reg" styleClass="form">
+            <fieldset>
+                <h3 class="category-title">Personal information</h3>
+                <ul>
+                    <li class="row">
+                        <stork:personAttribute label="Given Name:" componentId="giveName" attributeValue="#{mainPage.person.givenName}"/>
+                        <stork:personAttribute label="Family Name:" componentId="surname" attributeValue="#{mainPage.person.surname}"/>
+                    </li>
+                    <li class="row">
+                        <stork:personAttribute label="Date of Birth:" componentId="dateOfBirth" attributeValue="#{mainPage.person.dateOfBirth}"/>
+                        <stork:personAttribute label="Gender:" componentId="gender" attributeValue="#{mainPage.person.gender}"/>
+                    </li>
+                    <li class="row">
+                        <stork:personAttribute label="Nationality Code:" componentId="nationalityCode" attributeValue="#{mainPage.person.nationalityCode}"/>
+                        <stork:personAttribute label="Birth Country Coide:" componentId="countryCodeOfBirth" attributeValue="#{mainPage.person.countryCodeOfBirth}"/>
+                    </li>
+                    <li class="row">
+                        <stork:personAttribute label="Residence Address:" componentId="textResidenceAddress" attributeValue="#{mainPage.person.textResidenceAddress}"/>
+                        <stork:personAttribute label="Canonical Residence Address:" componentId="canonicalResidenceAddress" attributeValue="#{mainPage.person.canonicalResidenceAddress}"/>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <ul>
+                <li class="row actions">
+                    <a href="#" class="back cancel">Cancel</a>
+                    <h:commandButton id="register" action="#{mainPage.requestTaxId}" value="Register" styleClass="btn"/>
+                </li>
+            </ul>
         </h:form>
     </ui:define>
 </ui:composition>
