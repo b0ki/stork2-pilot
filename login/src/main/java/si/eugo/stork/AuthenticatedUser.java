@@ -2,6 +2,7 @@ package si.eugo.stork;
 
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
+import javax.inject.Named;
 import java.io.Serializable;
 
 /**
@@ -20,7 +21,7 @@ public class AuthenticatedUser implements Serializable {
         user = null;
     }
 
-    @Produces @Authenticated
+    @Produces @Authenticated @Named
     public StorkUser getUser() {
         return user;
     }

@@ -22,8 +22,4 @@ public class MainPage {
     public void requestTaxId() {
         log.debug("MainPage.requestTaxId");
     }
-
-    public StorkUser getPerson() {
-        return storkUser;
-    }
 }
