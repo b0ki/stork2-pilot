@@ -1,30 +1,30 @@
-.btn-search, form.search, .btn-submit, form.site-search, ul.links li, div.help .arrow, .more, .social a, .content ul li, .documents li, .secondary a, .gallery .magnify, .ui-tooltip-content:after, .expandables .trigger, .data ul li, .additional ul li, aside .steps li, .procedure li .left, .login .user .name, .progress-container, .btn.tick, .form .actions .back, .form .item .tip, .warning {background:url/web/web/resources/gfx/sprite.png) no-repeat;}
+.btn-search, form.search, .btn-submit, form.site-search, ul.links li, div.help .arrow, .more, .social a, .content ul li, .documents li, .secondary a, .gallery .magnify, .ui-tooltip-content:after, .expandables .trigger, .data ul li, .additional ul li, aside .steps li, .procedure li .left, .login .user .name, .progress-container, .btn.tick, .form .actions .back, .form .item .tip, .warning {background:url(/stork/resources/gfx/sprite.png) no-repeat;}
 
 header:after, .main:after, footer:after, header .inner:after, .teasers li.item:after, .main .inner:after, ul.teasers:after, div.help:after, .footer .wrap:after, .expandables .data:after, .module:after, aside dl:after, .content .procedure:after, .tasks li:after, .eugo-bar .inner:after, .login-form:after {height:0;content:".";display:block;clear:both;visibility:hidden;}
 
 
 @font-face {
     font-family: 'GothamOTLight';
-    src: url(/web/web/resources/font/gothamot_light-webfont.eot');}
+    src: url('/stork/resources/font/gothamot_light-webfont.eot');}
 @font-face {
     font-family: 'GothamOTLight';
-    src: url(//:) format('no404'), url(/web/web/resources/font/gothamot_light-webfont.woff') format('woff'), url(/web/web/resources/font/gothamot_light-webfont.ttf') format('truetype'), url(/web/web/resources/font/gothamot_light-webfont.svg#GothamOTLight') format('svg');
+    src: url(//:) format('no404'), url('/stork/resources/font/gothamot_light-webfont.woff') format('woff'), url('/stork/resources/font/gothamot_light-webfont.ttf') format('truetype'), url('/stork/resources/font/gothamot_light-webfont.svg#GothamOTLight') format('svg');
     font-weight: normal;
     font-style: normal;}
 @font-face {
     font-family: 'GothamOTBook';
-    src: url(/web/web/resources/font/gothamot_book-webfont.eot');}
+    src: url('/stork/resources/font/gothamot_book-webfont.eot');}
 @font-face {
     font-family: 'GothamOTBook';
-    src: url(//:) format('no404'), url(/web/resources/font/gothamot_book-webfont.woff') format('woff'), url(/web/resources/font/gothamot_book-webfont.ttf') format('truetype'), url(/web/resources/font/gothamot_book-webfont.svg#GothamOTBook') format('svg');
+    src: url('//:') format('no404'), url('/stork/resources/font/gothamot_book-webfont.woff') format('woff'), url('/stork/resources/font/gothamot_book-webfont.ttf') format('truetype'), url('/stork/resources/font/gothamot_book-webfont.svg#GothamOTBook') format('svg');
     font-weight: normal;
     font-style: normal;}
 @font-face {
     font-family: 'GothamOTMedium';
-    src: url(/web/resources/font/gothamot_medium-webfont.eot');}
+    src: url('/stork/resources/font/gothamot_medium-webfont.eot');}
 @font-face {
     font-family: 'GothamOTMedium';
-    src: url(//:) format('no404'), url(/web/resources/font/gothamot_medium-webfont.woff') format('woff'), url(/web/resources/font/gothamot_medium-webfont.ttf') format('truetype'), url(/web/resources/font/gothamot_medium-webfont.svg#GothamOTMedium') format('svg');
+    src: url('//:') format('no404'), url('/stork/resources/font/gothamot_medium-webfont.woff') format('woff'), url('/stork/resources/font/gothamot_medium-webfont.ttf') format('truetype'), url('/stork/resources/font/gothamot_medium-webfont.svg#GothamOTMedium') format('svg');
     font-weight: normal;
     font-style: normal;}
 
@@ -56,7 +56,7 @@ small {font-size:11px;}
 label,input[type='submit'] {cursor:pointer}
 input,textarea {font-family:helvetica,arial,sans-serif;}
 img {display:block;}
-.hr {margin:12px 0 14px;height:2px;width:100%; display:block; background:url(/web/resources/gfx/double-border-light.png) repeat-x 0 bottom; float:left;}
+.hr {margin:12px 0 14px;height:2px;width:100%; display:block; background:url('/stork/resources/gfx/double-border-light.png') repeat-x 0 bottom; float:left;}
 .hr hr{display:none;}
 .service-page .hr{background:#eeede4; margin-bottom:20px;}
 .hidden {display:none;visibility:hidden;}
@@ -75,7 +75,7 @@ p + h4{padding-top:10px;}
 a {color:#3077ae; text-decoration:none;}
 a:hover {text-decoration:underline;}
 
-header{background:url(/web/resources/gfx/header.jpg) center 0; font-size:14px; color:#fff;
+header{background:url('/stork/resources/gfx/header.jpg') center 0; font-size:14px; color:#fff;
 -moz-box-shadow:0 -6px 30px -16px rgba(0,0,0,0.6) inset;
 -webkit-box-shadow:0 -6px 30px -16px rgba(0,0,0,0.6) inset;
 box-shadow:0 -6px 30px -16px rgba(0,0,0,0.6) inset;
@@ -87,13 +87,13 @@ header .inner{padding:15px 0 108px;}
 .main .inner{padding:45px 0 50px;}
 .external-page .main .inner{padding-top:10px;}
 
-header #brand{width:363px; height:100px; float:left; margin-top:10px; margin-bottom:10px; background-image:url(/web/resources/gfx/logo.png); overflow:hidden;}
+header #brand{width:363px; height:100px; float:left; margin-top:10px; margin-bottom:10px; background-image:url('/stork/resources/gfx/logo.png'); overflow:hidden;}
 header #brand a{display:block; width:100%;}
 header .logo-print{visibility:hidden;}
 .home-page header #brand{margin-bottom:65px;}
 header a{color:#58b6de; text-decoration:underline;}
 header a:hover{color:#63cbf7;}
-.service-page header #brand{width:176px; height:49px; background-image:url(/web/resources/gfx/logo-s.png); margin-bottom:0; margin-top:0;}
+.service-page header #brand{width:176px; height:49px; background-image:url('/stork/resources/gfx/logo-s.png'); margin-bottom:0; margin-top:0;}
 
 header .login{float:right; margin-top:7px;}
 .login .user{text-align:right; float:right; padding-right:10px;}
@@ -190,16 +190,16 @@ box-shadow:1px 1px 1px rgba(0,0,0,0.22);
 input.submit{border:0;}
 
 .primary {position:absolute; left:0; bottom:0; background:rgba(27,85,136,0.22); border-radius:4px 4px 0 0;}
-.no-rgba .primary {background:url(/web/resources/gfx/menu-dark.png);}
+.no-rgba .primary {background:url('/stork/resources/gfx/menu-dark.png');}
 .primary li {float:left; margin-right:1px;}
 .primary li a{float:left; padding:16px 33px; border-radius:4px 4px 0 0; font-family:"GothamOTBook"; text-decoration:none; color:#fff; font-size:16px; -moz-transition:0.2s; -webkit-transition:0.2s; transition:0.2s;}
 .primary li a:hover{background:rgba(255,255,255,0.17);}
-.no-rgba .primary li a:hover{background:url(/web/resources/gfx/menu-light.png);}
+.no-rgba .primary li a:hover{background:url('/stork/resources/gfx/menu-light.png');}
 .primary li.selected a, .primary li.selected a:hover{background:#eeede4; color:#000;}
 
 .secondary {margin-bottom:20px;}
 .secondary a{font-size:16px; font-family:"GothamOTBook"; padding:12px 15px 12px 40px; display:block; background-position:-1262px -129px;}
-.secondary li{background-image:url(/web/resources/gfx/double-border-light.png); background-repeat:repeat-x; background-position:0 bottom; margin-top:-2px;}
+.secondary li{background-image:url('/stork/resources/gfx/double-border-light.png'); background-repeat:repeat-x; background-position:0 bottom; margin-top:-2px;}
 .secondary li.last{background-image:none;}
 .secondary li:hover a { text-decoration:none; background-color:#fff;}
 .secondary li.selected {position:relative; z-index:2;}
@@ -240,7 +240,7 @@ box-shadow:1px 1px 1px rgba(0,0,0,0.1);
 
 h2.category-title{font-family:"GothamOTMedium"; font-size:20px; padding-bottom:10px; border-bottom:2px solid #fff; margin-bottom:18px;}
 h3.category-title{padding-bottom:7px; border-bottom:2px solid #eeede4; margin-bottom:18px; position:relative;}
-.home-page h2.category-title{font-family:"GothamOTBook"; font-size:22px; background:url(/web/resources/gfx/double-border-light.png) repeat-x 0 bottom; border:none;}
+.home-page h2.category-title{font-family:"GothamOTBook"; font-size:22px; background:url('/stork/resources/gfx/double-border-light.png') repeat-x 0 bottom; border:none;}
 .category-title a{text-align:right; position:absolute; right:0; top:2px; font-family:Arial, Helvetica, sans-serif; font-size:13px;}
 
 .managing .links{margin-bottom:25px;}
@@ -260,7 +260,7 @@ div.help p{line-height:17px;}
 .content .more{margin-left:18px; margin-bottom:15px;}
 .data .more{margin:-5px 0 12px;}
 
-.breadcrumbs{font-size:12px; margin-bottom:30px; position:absolute; left:0; top:0; width:100%; padding:12px 0; background:url(/web/resources/gfx/double-border-light.png) repeat-x 0 bottom;}
+.breadcrumbs{font-size:12px; margin-bottom:30px; position:absolute; left:0; top:0; width:100%; padding:12px 0; background:url('/stork/resources/gfx/double-border-light.png') repeat-x 0 bottom;}
 .breadcrumbs span {font-size:14px; padding:0 6px 0 5px;}
 
 .categories h2{margin-bottom:10px;}
@@ -303,7 +303,7 @@ aside .steps{padding-top:10px;}
 aside .steps li{float:left; padding-bottom:30px; background-position:-862px -102px; width:100%; text-align:center;}
 aside .steps li.last{background-image:none; padding-bottom:10px;}
 
-aside h3{background:url(/web/resources/gfx/double-border-light.png) repeat-x 0 bottom; padding-bottom:10px;}
+aside h3{background:url('/stork/resources/gfx/double-border-light.png') repeat-x 0 bottom; padding-bottom:10px;}
 aside h4 {font-size:16px; margin-bottom:12px;}
 
 aside div.help{width:251px;}
@@ -550,7 +550,7 @@ box-shadow:0 1px 1px rgba(255,255,255,0.07), 0 1px 2px rgba(0,0,0,0.3) inset;
 .footer nav {width:690px; float:left;}
 .footer nav .section{float:left;}
 .footer nav .section ul{width:140px; margin-right:30px;}
-.footer nav .section ul li{padding:6px 0 4px; background:url(/web/resources/gfx/double-border.png) repeat-x 0 top;}
+.footer nav .section ul li{padding:6px 0 4px; background:url('/stork/resources/gfx/double-border.png') repeat-x 0 top;}
 .footer nav .section ul li a{color:#ababab;}
 .footer nav .section ul li.first{background:none;}
 .footer nav h4 {margin-bottom:10px; font-family:"GothamOTBook";}
@@ -567,15 +567,15 @@ box-shadow:0 1px 1px rgba(255,255,255,0.07), 0 1px 2px rgba(0,0,0,0.3) inset;
 .footer .partners li img{display:inline;}
 .footer .partners li p{margin-top:15px;}
 
-.copyrights{float:left; width:100%; padding:10px 0 20px; background:url(/web/resources/gfx/double-border.png) repeat-x 0 0;}
+.copyrights{float:left; width:100%; padding:10px 0 20px; background:url('/stork/resources/gfx/double-border.png') repeat-x 0 0;}
 .service-page .copyrights{background:none; padding:0 0 10px;}
 .footer .production{float:right;}
 .footer em{float:left; font-style:normal;}
 span.separator {padding:0 7px; display:inline-block; font-family:Arial, Helvetica, sans-serif; color:#aaa;}
 .footer span.separator{color:#555;}
 
-.not-found {background:url(/web/resources/gfx/404-bgr.png);}
-.not-found body {background:url(/web/resources/gfx/404.jpg) top center no-repeat;}
+.not-found {background:url('/stork/resources/gfx/404-bgr.png');}
+.not-found body {background:url('/stork/resources/gfx/404.jpg') top center no-repeat;}
 .not-found .header {background:none;-moz-box-shadow:none;-webkit-box-shadow:none;box-shadow:none;}
 #bgr {margin:0 auto;position:fixed;z-index:-1;}
 .not-found .main {margin:400px auto 20px;width:520px;background:none;color:#fff;}
@@ -600,11 +600,11 @@ span.separator {padding:0 7px; display:inline-block; font-family:Arial, Helvetic
 .progress-bar{margin-bottom:30px;}
 .progress-bar h3{background:none; margin-bottom:0; font-size:16px;}
 .progress-container{width:292px; height:19px; padding:7px; background-position:0 -159px;}
-.progress{background:url(/web/resources/gfx/progress.gif); height:17px; border-radius:2px; border:1px solid #b4b1ad;}
+.progress{background:url('/stork/resources/gfx/progress.gif'); height:17px; border-radius:2px; border:1px solid #b4b1ad;}
 
 .no-margin{margin-bottom:0 !important;}
 
-.or {background:url(/web/resources/gfx/line.gif) 0 center repeat-x; width:100%; margin-bottom:20px; text-align:center; padding-bottom:2px;}
+.or {background:url('/stork/resources/gfx/line.gif') 0 center repeat-x; width:100%; margin-bottom:20px; text-align:center; padding-bottom:2px;}
 .or span{background-color:#fff; padding:3px 20px; color:#cfcfc0; font-family:"GothamOTMedium"; display:inline-block; font-size:16px;}
 
 .tasks{float:left; width:100%;}
@@ -648,8 +648,4 @@ header #brand{height:50px;}
 a,a:visited {color:#444 !important;text-decoration:underline;}
 thead {display:table-header-group;}
 tr,img {page-break-inside:avoid;}
-}
-
-#reg {
-display: none;
 }
