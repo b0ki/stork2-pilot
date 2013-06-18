@@ -90,36 +90,11 @@
             <artifactId>richfaces-components-ui</artifactId>
         </dependency>
 
-        <!-- Import the Atmosphere framework for a4j:push -->
-        <dependency>
-            <groupId>org.atmosphere</groupId>
-            <artifactId>atmosphere-runtime</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <!-- Now we declare any tools needed -->
-
-        <!-- Annotation processor to generate the JPA 2.0 metamodel classes
-            for typesafe criteria queries -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-jpamodelgen</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
     </dependencies>
 
     <build>
         <finalName>stork</finalName>
         <plugins>
-            <!-- The JBoss AS plugin deploys your war to a local JBoss AS
-                container -->
-            <!-- To use, run: mvn package jboss-as:deploy -->
             <plugin>
                 <groupId>org.jboss.as.plugins</groupId>
                 <artifactId>jboss-as-maven-plugin</artifactId>
