@@ -46,6 +46,10 @@ Change the PROJECT_STAGE to 'Production' when putting the application into produ
     <servlet>
         <servlet-name>storkAuthServlet</servlet-name>
         <servlet-class>si.eugo.stork.StorkAuthServlet</servlet-class>
+        <init-param>
+            <param-name>success-page</param-name>
+            <param-value>main.jsf</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>

@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,7 +35,15 @@ public class StorkAuthServlet extends HttpServlet {
     @Inject
     private AuthenticatedUser authenticatedUser;
 
-	@Override
+    private String successPage;
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        successPage = config.getInitParameter("success-page");
+    }
+
+    @Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
@@ -98,8 +107,7 @@ public class StorkAuthServlet extends HttpServlet {
             //TODO Decide on JAAS
 			//req.login(storkUser.getUsername(), storkUser.geteId());
 			
-			//TODO InitURL
-			resp.sendRedirect("main.jsf");
+			resp.sendRedirect(successPage);
 		}
 	}
 
