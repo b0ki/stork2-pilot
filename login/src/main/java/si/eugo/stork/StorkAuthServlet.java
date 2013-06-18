@@ -62,7 +62,7 @@ public class StorkAuthServlet extends HttpServlet {
 					"Saml Response is fail", authnResponse.getMessage());
 		} else {
 
-			StorkUser storkUser = new StorkUser("");
+			StorkUser storkUser = new StorkUser();
 			// Get attributes
 			personalAttributeList = authnResponse.getPersonalAttributeList();
 			attrList = new ArrayList<PersonalAttribute>(

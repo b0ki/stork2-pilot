@@ -19,7 +19,21 @@ public class StorkUser {
     
     private Map<String, PersonalAttribute> storkAttrs;
 
-	public Map<String, PersonalAttribute> getStorkAttrs() {
+    public StorkUser() {
+    }
+
+    public StorkUser(String givenName, String surname, String dateOfBirth, String countryCodeOfBirth, String nationalityCode, String gender, String canonicalResidenceAddress, String textResidenceAddress) {
+        this.givenName = givenName;
+        this.surname = surname;
+        this.dateOfBirth = dateOfBirth;
+        this.countryCodeOfBirth = countryCodeOfBirth;
+        this.nationalityCode = nationalityCode;
+        this.gender = gender;
+        this.canonicalResidenceAddress = canonicalResidenceAddress;
+        this.textResidenceAddress = textResidenceAddress;
+    }
+
+    public Map<String, PersonalAttribute> getStorkAttrs() {
 		return storkAttrs;
 	}
 
@@ -64,10 +78,6 @@ public class StorkUser {
 	}
 
 	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public StorkUser(String username) {
 		this.username = username;
 	}
 
