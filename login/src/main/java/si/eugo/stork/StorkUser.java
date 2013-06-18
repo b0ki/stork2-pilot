@@ -1,8 +1,8 @@
 package si.eugo.stork;
 
-import java.util.HashMap;
-
 import eu.stork.peps.auth.commons.PersonalAttribute;
+
+import java.util.Map;
 
 
 public class StorkUser {
@@ -11,13 +11,19 @@ public class StorkUser {
 	private String surname;
 	private String eId;
 	private String dateOfBirth;
-	HashMap<String, PersonalAttribute> storkAttrs;
+    private String countryCodeOfBirth;
+    private String nationalityCode;
+    private String gender;
+    private String canonicalResidenceAddress;
+    private String textResidenceAddress;
+    
+    private Map<String, PersonalAttribute> storkAttrs;
 
-	public HashMap<String, PersonalAttribute> getStorkAttrs() {
+	public Map<String, PersonalAttribute> getStorkAttrs() {
 		return storkAttrs;
 	}
 
-	public void setStorkAttrs(HashMap<String, PersonalAttribute> storkAttrs) {
+	public void setStorkAttrs(Map<String, PersonalAttribute> storkAttrs) {
 		this.storkAttrs = storkAttrs;
 	}
 
@@ -64,6 +70,44 @@ public class StorkUser {
 	public StorkUser(String username) {
 		this.username = username;
 	}
-	
-	
+
+    public String getCountryCodeOfBirth() {
+        return countryCodeOfBirth;
+    }
+
+    public void setCountryCodeOfBirth(String countryCodeOfBirth) {
+        this.countryCodeOfBirth = countryCodeOfBirth;
+    }
+
+    public String getNationalityCode() {
+        return nationalityCode;
+    }
+
+    public void setNationalityCode(String nationalityCode) {
+        this.nationalityCode = nationalityCode;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getCanonicalResidenceAddress() {
+        return canonicalResidenceAddress;
+    }
+
+    public void setCanonicalResidenceAddress(String canonicalResidenceAddress) {
+        this.canonicalResidenceAddress = canonicalResidenceAddress;
+    }
+
+    public String getTextResidenceAddress() {
+        return textResidenceAddress;
+    }
+
+    public void setTextResidenceAddress(String textResidenceAddress) {
+        this.textResidenceAddress = textResidenceAddress;
+    }
 }

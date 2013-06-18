@@ -14,7 +14,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -71,7 +70,7 @@ public class StorkAuthServlet extends HttpServlet {
 			HashMap<String, List<String>> storkSessionAttrMap = new HashMap<String, List<String>>();
 			for (PersonalAttribute pa : attrList) {
 				log.debug("PersonalAttribute Friendly Name = "
-						+ pa.getFriendlyName());
+                        + pa.getFriendlyName());
 				log.debug("PersonalAttribute Name = " + pa.getName());
 				if (pa.getValue() != null) {
 					storkAttrs.put(pa.getName(), pa);
@@ -81,20 +80,24 @@ public class StorkAuthServlet extends HttpServlet {
 
 				if (("dateOfBirth").equals(pa.getName())) {
 					storkUser.setDateOfBirth(pa.getValue().get(0));
-				}
-
-				if (("surname").equals(pa.getName())) {
+				} else if (("surname").equals(pa.getName())) {
 					storkUser.setSurname(pa.getValue().get(0));
-				}
-
-				if (("givenName").equals(pa.getName())) {
+				} else if (("givenName").equals(pa.getName())) {
 					storkUser.setGivenName(pa.getValue().get(0));
-				}
-
-				if (("eIdentifier").equals(pa.getName())) {
+				} else if (("eIdentifier").equals(pa.getName())) {
 					storkUser.seteId(pa.getValue().get(0));
 					storkUser.setUsername(pa.getValue().get(0));
-				}
+				} else if ("textResidenceAddress".equals(pa.getName())) {
+                    storkUser.setTextResidenceAddress(pa.getValue().get(0));
+				} else if ("canonicalResidenceAddress".equals(pa.getName())) {
+                    storkUser.setCanonicalResidenceAddress(pa.getValue().get(0));
+				} else if ("gender".equals(pa.getName())) {
+                    storkUser.setGender(pa.getValue().get(0));
+				} else if ("nationalityCode".equals(pa.getName())) {
+                    storkUser.setNationalityCode(pa.getValue().get(0));
+				} else if ("countryCodeOfBirth".equals(pa.getName())) {
+                    storkUser.setCountryCodeOfBirth(pa.getValue().get(0));
+                }
 			}
 			storkUser.setStorkAttrs(storkAttrs);
 
