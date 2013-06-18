@@ -1,27 +1,21 @@
 package si.eugo.stork;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
-import java.util.Properties;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.xml.bind.JAXBContext;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import eu.stork.peps.auth.commons.PEPSUtil;
 import eu.stork.peps.auth.commons.PersonalAttribute;
 import eu.stork.peps.auth.commons.PersonalAttributeList;
 import eu.stork.peps.auth.commons.STORKAuthnRequest;
 import eu.stork.peps.auth.engine.STORKSAMLEngine;
 import eu.stork.peps.exceptions.STORKSAMLEngineException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.JAXBContext;
+import java.io.*;
+import java.util.Properties;
 
 public class StorkServlet extends HttpServlet {
 
@@ -77,14 +71,7 @@ public class StorkServlet extends HttpServlet {
 		citizen = req.getParameter("citizen");
 		log.info("req.getParameter(\"citizen\") = " + citizen);
 
-		try {
-			JAXBContext ctx = JAXBContext.newInstance(SpocsStorkConfig.class);
-			File f = new File(System.getProperty("jboss.server.config.dir"), "storkconfig.xml");
-			xconfigs = (SpocsStorkConfig) ctx.createUnmarshaller().unmarshal(f);
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+        readXConfigs();
 
 		if (citizen == null || citizen.equals(""))
 			throw new ApplicationSpecificServiceException(
@@ -153,7 +140,17 @@ public class StorkServlet extends HttpServlet {
 
 	}
 
-	@Override
+    private void readXConfigs()  {
+        try {
+            JAXBContext ctx = JAXBContext.newInstance(SpocsStorkConfig.class);
+            File f = new File(System.getProperty("jboss.server.config.dir"), "storkconfig.xml");
+            xconfigs = (SpocsStorkConfig) ctx.createUnmarshaller().unmarshal(f);
+        } catch (Exception e) {
+            throw new RuntimeException("Error reding storconfig.xml", e);
+        }
+    }
+
+    @Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
