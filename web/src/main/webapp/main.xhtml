@@ -10,7 +10,7 @@
         <h:messages globalOnly="true"/>
 
         <h:panelGroup rendered="#{empty user}">
-            Please <h:outputLink value="/initLogin">login in through Stork</h:outputLink> first.
+            Please <h:outputLink value="#{request.contextPath}/initLogin">login in through Stork</h:outputLink> first.
         </h:panelGroup>
 
         <h:form id="reg" styleClass="form" rendered="#{not empty user}">
