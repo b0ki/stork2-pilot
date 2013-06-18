@@ -120,4 +120,10 @@ public class StorkUser {
     public void setTextResidenceAddress(String textResidenceAddress) {
         this.textResidenceAddress = textResidenceAddress;
     }
+
+    @Override
+    public String toString() {
+        return String.format("StorkUser{username='%s', givenName='%s', surname='%s', eId='%s', dateOfBirth='%s', countryCodeOfBirth='%s', nationalityCode='%s', gender='%s', canonicalResidenceAddress='%s', textResidenceAddress='%s'}",
+                username, givenName, surname, eId, dateOfBirth, countryCodeOfBirth, nationalityCode, gender, canonicalResidenceAddress, textResidenceAddress);
+    }
 }

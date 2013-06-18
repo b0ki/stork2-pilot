@@ -21,5 +21,6 @@ public class MainPage {
 
     public void requestTaxId() {
         log.debug("MainPage.requestTaxId");
+        log.debug("storkUser = {}", storkUser);
     }
 }
