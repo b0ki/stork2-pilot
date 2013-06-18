@@ -168,10 +168,16 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.6.4</version>
+            <version>${version.slf4j}</version>
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.12</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -264,6 +270,7 @@
         <version.jboss.bom>1.0.4.Final</version.jboss.bom>
         <version.stork-commons>0.5.1</version.stork-commons>
 		<version.stork-saml>0.5.3</version.stork-saml>
+        <version.slf4j>1.6.4</version.slf4j>
     </properties>
 
 
