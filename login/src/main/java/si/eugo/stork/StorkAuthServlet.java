@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class StorkAuthServlet extends HttpServlet {
 
@@ -66,8 +67,8 @@ public class StorkAuthServlet extends HttpServlet {
 			personalAttributeList = authnResponse.getPersonalAttributeList();
 			attrList = new ArrayList<PersonalAttribute>(
 					personalAttributeList.values());
-			HashMap<String, PersonalAttribute> storkAttrs = new HashMap<String, PersonalAttribute>();
-			HashMap<String, List<String>> storkSessionAttrMap = new HashMap<String, List<String>>();
+			Map<String, PersonalAttribute> storkAttrs = new HashMap<String, PersonalAttribute>();
+			Map<String, List<String>> nameValueMap = new HashMap<String, List<String>>();
 			for (PersonalAttribute pa : attrList) {
 				log.debug("PersonalAttribute Friendly Name = "
                         + pa.getFriendlyName());
@@ -75,31 +76,22 @@ public class StorkAuthServlet extends HttpServlet {
 				if (pa.getValue() != null) {
 					storkAttrs.put(pa.getName(), pa);
 					if (pa.getValue() != null)
-						storkSessionAttrMap.put(pa.getName(), pa.getValue());
+						nameValueMap.put(pa.getName(), pa.getValue());
 				}
-
-				if (("dateOfBirth").equals(pa.getName())) {
-					storkUser.setDateOfBirth(pa.getValue().get(0));
-				} else if (("surname").equals(pa.getName())) {
-					storkUser.setSurname(pa.getValue().get(0));
-				} else if (("givenName").equals(pa.getName())) {
-					storkUser.setGivenName(pa.getValue().get(0));
-				} else if (("eIdentifier").equals(pa.getName())) {
-					storkUser.seteId(pa.getValue().get(0));
-					storkUser.setUsername(pa.getValue().get(0));
-				} else if ("textResidenceAddress".equals(pa.getName())) {
-                    storkUser.setTextResidenceAddress(pa.getValue().get(0));
-				} else if ("canonicalResidenceAddress".equals(pa.getName())) {
-                    storkUser.setCanonicalResidenceAddress(pa.getValue().get(0));
-				} else if ("gender".equals(pa.getName())) {
-                    storkUser.setGender(pa.getValue().get(0));
-				} else if ("nationalityCode".equals(pa.getName())) {
-                    storkUser.setNationalityCode(pa.getValue().get(0));
-				} else if ("countryCodeOfBirth".equals(pa.getName())) {
-                    storkUser.setCountryCodeOfBirth(pa.getValue().get(0));
-                }
 			}
-			storkUser.setStorkAttrs(storkAttrs);
+
+            storkUser.setDateOfBirth(getAttribute(nameValueMap, "dateOfBirth"));
+            storkUser.setSurname(getAttribute(nameValueMap, "surname"));
+            storkUser.setGivenName(getAttribute(nameValueMap, "givenName"));
+            storkUser.seteId(getAttribute(nameValueMap, "eIdentifier"));
+            storkUser.setUsername(getAttribute(nameValueMap, "eIdentifier"));
+            storkUser.setTextResidenceAddress(getAttribute(nameValueMap, "textResidenceAddress"));
+            storkUser.setCanonicalResidenceAddress(getAttribute(nameValueMap, "canonicalResidenceAddress"));
+            storkUser.setGender(getAttribute(nameValueMap, "gender"));
+            storkUser.setNationalityCode(getAttribute(nameValueMap, "nationalityCode"));
+            storkUser.setCountryCodeOfBirth(getAttribute(nameValueMap, "countryCodeOfBirth"));
+
+            storkUser.setStorkAttrs(storkAttrs);
 
             authenticatedUser.login(storkUser);
 
@@ -107,11 +99,16 @@ public class StorkAuthServlet extends HttpServlet {
 			//req.login(storkUser.getUsername(), storkUser.geteId());
 			
 			//TODO InitURL
-			resp.sendRedirect("main.xhtml");
+			resp.sendRedirect("main.jsf");
 		}
 	}
 
-	@Override
+    private String getAttribute(Map<String, List<String>> nameValueMap, String dateOfBirth) {
+        List<String> values = nameValueMap.get(dateOfBirth);
+        return values == null || values.isEmpty() ? null : values.get(0);
+    }
+
+    @Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub

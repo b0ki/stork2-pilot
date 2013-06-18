@@ -35,6 +35,32 @@ Change the PROJECT_STAGE to 'Production' when putting the application into produ
         <param-name>org.richfaces.resourceOptimization.enabled</param-name>
         <param-value>true</param-value>
     </context-param>
+    <servlet>
+        <servlet-name>initLoginServlet</servlet-name>
+        <servlet-class>si.eugo.stork.InitLoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>storkServlet</servlet-name>
+        <servlet-class>si.eugo.stork.StorkServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>storkAuthServlet</servlet-name>
+        <servlet-class>si.eugo.stork.StorkAuthServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>initLoginServlet</servlet-name>
+        <url-pattern>/initLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>storkServlet</servlet-name>
+        <url-pattern>/storkservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>storkAuthServlet</servlet-name>
+        <url-pattern>/storkauth</url-pattern>
+    </servlet-mapping>
+
 
     <!-- add a welcome-file-list entry to allow JSF pages to be sued as welcome files -->
     <welcome-file-list>

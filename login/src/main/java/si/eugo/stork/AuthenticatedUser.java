@@ -20,7 +20,7 @@ public class AuthenticatedUser implements Serializable {
         user = null;
     }
 
-    @Produces
+    @Produces @Authenticated
     public StorkUser getUser() {
         return user;
     }

@@ -1,0 +1,17 @@
+<ui:component xmlns=""
+              xmlns:ui="http://java.sun.com/jsf/facelets"
+              xmlns:composite="http://java.sun.com/jsf/composite" xmlns:h="http://java.sun.com/jsf/html">
+
+    <composite:interface>
+        <composite:attribute name="componentId" required="true"/>
+        <composite:attribute name="label" required="true"/>
+        <composite:attribute name="attributeValue" required="true"/>
+    </composite:interface>
+
+    <composite:implementation>
+        <h:outputLabel for="#{cc.attrs.componentId}" value="#{cc.attrs.label}"/>
+        <h:inputText id="#{cc.attrs.componentId}" value="#{cc.attrs.attributeValue}" disabled="true"/>
+        <h:message for="#{cc.attrs.componentId}" errorClass="invalid"/>
+    </composite:implementation>
+
+</ui:component>
