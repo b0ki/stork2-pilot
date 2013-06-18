@@ -24,13 +24,6 @@
             <artifactId>login</artifactId>
             <type>ejb</type>
         </dependency>
-
-        <!-- This is needed for @Push -->
-        <dependency>
-            <groupId>org.richfaces.core</groupId>
-            <artifactId>richfaces-core-api</artifactId>
-        </dependency>
-
     </dependencies>
 
 </project>
