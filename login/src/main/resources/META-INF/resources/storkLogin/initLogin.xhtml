@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>peps-redirect</title>
+</head>
+<body style="text-align: center; background: url('http://www.eugo.gov.si/typo3conf/ext/a3_ekt_template/Resources/Public/Images/404-bgr.png') repeat scroll 0 0 #F5F5F5; font-family: arial, tahoma, verdana"> //onload="document.redirectForm.submit();"
+
+<header class="header vcard" role="banner">
+    <div class="inner" style=" margin: 0 auto;    position: relative;    width: 960px;height: 170px;">
+        <h1 id="brand"  style="  background-image: url('http://eugo.gov.si/typo3conf/ext/a3_ekt_template/Resources/Public/Images/logo-beta.png');    float: left;    height: 100px;    margin-bottom: 10px;    overflow: hidden;    width: 410px;">
+            <a target="_top" href="http://www.eugo.gov.si/"> </a>
+        </h1>
+    </div>
+</header>
+
+<div class="UILogin"
+     style="color: #FFF; font-size: 14px; width: 960px; margin: auto; padding: 0;">
+    <div class="LoginHeader"></div>
+    <div class="LoginContent">
+        <div class="CenterLoginContent">
+
+            <form name="loginForm" action="#{request.contextPath}/storkservlet" method="post" style="margin: 0px;">
+
+
+                <div style="padding: 20px; border: #fff 1px solid">
+                    <div style="padding: 20px;">The system will guide you
+                        through several steps to verify your identity and execute the
+                        selected service.</div>
+                    <div class="UserNameField">
+                        <div class="FieldLabel">Select your country:</div>
+                        <div>
+                            <select name="citizen" id="citizen" style="width: 140px;">
+                                <option></option>
+                                <option value="SI" icon="/login/skin/imgages/banderas/SI-PEPS.gif">Slovenija</option>
+                                <option value="LT" icon="/login/skin/imgages/banderas/LT.gif">Lietuva</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div><p></p></div>
+                    <div class="MiddleButton"
+                         style="background: #ddd; height: 40px; line-height: 36px; margin: auto; width: 80px;" onclick="login();">
+                        <a href="#">Sign in</a>
+                    </div>
+                </div>
+                <div class="ClearLeft">
+                    <span></span>
+                </div>
+                <script type='text/javascript'>
+                    function login() {
+                        var e = document.getElementById("citizen");
+                        var strUser = e.options[e.selectedIndex].value;
+                        if(strUser != ''){
+                            document.loginForm.submit();
+                        }
+                    }
+                </script>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

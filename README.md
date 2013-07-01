@@ -23,10 +23,6 @@ Add maven dependency:
 Configure it in web.xml:
 
     <servlet>
-        <servlet-name>initLoginServlet</servlet-name>
-        <servlet-class>si.eugo.stork.InitLoginServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>storkServlet</servlet-name>
         <servlet-class>si.eugo.stork.StorkServlet</servlet-class>
     </servlet>
@@ -40,10 +36,6 @@ Configure it in web.xml:
         </init-param>
     </servlet>
 
-    <servlet-mapping>
-        <servlet-name>initLoginServlet</servlet-name>
-        <url-pattern>/initLogin</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>storkServlet</servlet-name>
         <url-pattern>/storkservlet</url-pattern>
