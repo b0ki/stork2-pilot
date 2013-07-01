@@ -9,12 +9,16 @@ import eu.stork.peps.exceptions.STORKSAMLEngineException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.JAXBContext;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class StorkServlet extends HttpServlet {
@@ -42,6 +46,8 @@ public class StorkServlet extends HttpServlet {
 	private String qaa;
 	private String citizen;
 	private String returnUrl;
+
+    @Inject private StorkPostData storkPostData;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -121,24 +127,12 @@ public class StorkServlet extends HttpServlet {
 
 		SAMLRequest = PEPSUtil.encodeSAMLToken(token);
 
-		resp.setContentType("text/html; charset=UTF-8");
+        storkPostData.setCitizen(citizen);
+        storkPostData.setSAMLRequest(SAMLRequest);
 
-		PrintWriter out = resp.getWriter();
-		out.write("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">");
-		out.write("<html>");
-		out.write("<head>");
-		out.write("<title>peps-redirect</title>");
-		out.write("</head>");
-		out.write("<body onload=\"document.redirectForm.submit();\">"); //onload=\"document.redirectForm.submit();\"
-		out.write("<form name=\"redirectForm\"  action=\"https://peps-test.mju.gov.si/PEPS/ServiceProvider\" method=\"post\" target=\"_self\" >");
-		out.write("<input type=\"hidden\" name=\"SAMLRequest\" value=\""
-				+ SAMLRequest + "\"/>");
-		out.write("<input type=hidden name=\"country\" value=\"" + citizen
-				+ "\"/>");
-		out.write("</form>");
-		out.write("</body>");
-		out.write("</html>");
+        log.debug("Redirecting to PEPS post facelet.");
 
+        resp.sendRedirect("storkLogin/stork-redirect.jsf");
 	}
 
     private void readXConfigs()  {

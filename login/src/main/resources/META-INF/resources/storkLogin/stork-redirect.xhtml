@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>peps-redirect</title>
+</head>
+<body onload="document.redirectForm.submit();">
+<!-- todo: get url from config -->
+<form name="redirectForm"  action="https://peps-test.mju.gov.si/PEPS/ServiceProvider" method="post" target="_self" >
+    <input type="hidden" name="SAMLRequest" value="#{storkPostData.SAMLRequest}"/>
+    <input type="hidden" name="country" value="#{storkPostData.citizen}"/>
+    <!--<input type="submit"/>-->
+</form>
+</body>
+</html>
