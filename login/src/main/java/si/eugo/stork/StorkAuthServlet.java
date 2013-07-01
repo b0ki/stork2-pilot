@@ -32,7 +32,6 @@ public class StorkAuthServlet extends HttpServlet {
     @Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(req, resp);
 	}
 
