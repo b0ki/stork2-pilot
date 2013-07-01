@@ -1,12 +1,69 @@
 stork2-pilot
 ============
 
-Authors: Zdravko Čule, Boris Šaletić
+Authors: Zdravko Čule, Boris Šaletić, Matija Mazi
 Mentor: Matija Mazi
 UX: Tomasz Pirc
 Technologies: CDI, JSF, JPA, EJB, JPA, JAX-RS, BV
 Summary: STORK 2 - Bussiness Lifecycle Pilot 
 Source: <https://github.com/b0ki/stork2-pilot>
+
+How to use Stork Login
+--------------
+
+Add maven dependency:
+
+    <dependency>
+        <groupId>si.gov.mnz.blp.taxid</groupId>
+        <artifactId>login</artifactId>
+        <type>ejb</type>
+        <version>0.1-SNAPSHOT</version>
+    </dependency>
+
+Configure it in web.xml:
+
+    <servlet>
+        <servlet-name>initLoginServlet</servlet-name>
+        <servlet-class>si.eugo.stork.InitLoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>storkServlet</servlet-name>
+        <servlet-class>si.eugo.stork.StorkServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>storkAuthServlet</servlet-name>
+        <servlet-class>si.eugo.stork.StorkAuthServlet</servlet-class>
+        <init-param>
+            <param-name>success-page</param-name>
+            <!-- This is where the stork login module will redirect after successfull Stork login: -->
+            <param-value>main.jsf</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>initLoginServlet</servlet-name>
+        <url-pattern>/initLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>storkServlet</servlet-name>
+        <url-pattern>/storkservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>storkAuthServlet</servlet-name>
+        <url-pattern>/storkauth</url-pattern>
+    </servlet-mapping>
+
+Add sp.properties and storkconfig.xml to JBoss config dir (TODO).
+
+Get the user data (attributes) obtained from Stork in CDI beans:
+
+    @Inject @Authenticated
+    private StorkUser storkUser;
+
+.. or in facelets:
+
+     #{user}
+
 
 What is it?
 -----------
