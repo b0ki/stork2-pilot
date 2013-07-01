@@ -9,7 +9,7 @@ import eu.stork.peps.exceptions.STORKSAMLEngineException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.inject.Inject;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -47,7 +47,7 @@ public class StorkServlet extends HttpServlet {
 	private String citizen;
 	private String returnUrl;
 
-    @Inject private StorkAuthenticator authenticator;
+    @EJB private StorkAuthenticator authenticator;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)

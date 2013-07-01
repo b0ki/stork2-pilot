@@ -1,6 +1,6 @@
 package si.eugo.stork;
 
-import javax.inject.Inject;
+import javax.ejb.EJB;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class StorkAuthServlet extends HttpServlet {
 
-    @Inject
+    @EJB
     private StorkAuthenticator authenticator;
 
     private String successPage;
