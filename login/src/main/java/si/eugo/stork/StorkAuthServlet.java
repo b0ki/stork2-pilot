@@ -29,9 +29,6 @@ public class StorkAuthServlet extends HttpServlet {
 	private static final Logger log = LoggerFactory.getLogger(StorkAuthServlet.class.getName());
 
 
-	private ArrayList<PersonalAttribute> attrList;
-
-
     @Inject
     private AuthenticatedUser authenticatedUser;
 
@@ -47,23 +44,21 @@ public class StorkAuthServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
-		STORKAuthnResponse authnResponse = null;
-		IPersonalAttributeList personalAttributeList = null;
+		STORKAuthnResponse authnResponse;
+		IPersonalAttributeList personalAttributeList;
 
 
-		byte[] decSamlToken = PEPSUtil.decodeSAMLToken(req
-				.getParameter("SAMLResponse"));
+		byte[] decSamlToken = PEPSUtil.decodeSAMLToken(req.getParameter("SAMLResponse"));
 
 		STORKSAMLEngine engine = STORKSAMLEngine.getInstance(Constants.SP_CONF);
 
 		try {
 			// validate SAML Token
-			authnResponse = engine.validateSTORKAuthnResponse(decSamlToken,
-					(String) req.getRemoteHost());
+			authnResponse = engine.validateSTORKAuthnResponse(decSamlToken, req.getRemoteHost());
 		} catch (STORKSAMLEngineException e) {
 			throw new ApplicationSpecificServiceException(
 					"Could not validate token for Saml Response",
-					e.getErrorMessage());
+					e.toString());
 		}
 
 		if (authnResponse.isFail()) {
@@ -74,8 +69,8 @@ public class StorkAuthServlet extends HttpServlet {
 			StorkUser storkUser = new StorkUser();
 			// Get attributes
 			personalAttributeList = authnResponse.getPersonalAttributeList();
-			attrList = new ArrayList<PersonalAttribute>(
-					personalAttributeList.values());
+            ArrayList<PersonalAttribute> attrList = new ArrayList<PersonalAttribute>(
+                    personalAttributeList.values());
 			Map<String, PersonalAttribute> storkAttrs = new HashMap<String, PersonalAttribute>();
 			Map<String, List<String>> nameValueMap = new HashMap<String, List<String>>();
 			for (PersonalAttribute pa : attrList) {
