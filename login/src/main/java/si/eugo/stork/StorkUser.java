@@ -23,14 +23,18 @@ public class StorkUser {
     }
 
     public StorkUser(String givenName, String surname, String dateOfBirth, String countryCodeOfBirth, String nationalityCode, String gender, String canonicalResidenceAddress, String textResidenceAddress) {
-        this.givenName = givenName;
-        this.surname = surname;
-        this.dateOfBirth = dateOfBirth;
-        this.countryCodeOfBirth = countryCodeOfBirth;
-        this.nationalityCode = nationalityCode;
-        this.gender = gender;
-        this.canonicalResidenceAddress = canonicalResidenceAddress;
-        this.textResidenceAddress = textResidenceAddress;
+        setStuff(givenName, surname, dateOfBirth, countryCodeOfBirth, nationalityCode, gender, canonicalResidenceAddress, textResidenceAddress);
+    }
+
+    public void setStuff(String givenName, String surname, String dateOfBirth, String countryCodeOfBirth, String nationalityCode, String gender, String canonicalResidenceAddress, String textResidenceAddress) {
+        this.setGivenName(givenName);
+        this.setSurname(surname);
+        this.setDateOfBirth(dateOfBirth);
+        this.setCountryCodeOfBirth(countryCodeOfBirth);
+        this.setNationalityCode(nationalityCode);
+        this.setGender(gender);
+        this.setCanonicalResidenceAddress(canonicalResidenceAddress);
+        this.setTextResidenceAddress(textResidenceAddress);
     }
 
     public Map<String, PersonalAttribute> getStorkAttrs() {

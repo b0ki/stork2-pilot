@@ -49,7 +49,6 @@ public class StorkAuthenticator {
         if (authnResponse.isFail()) {
             throw new ApplicationSpecificServiceException("Saml Response is fail", authnResponse.getMessage());
         }
-        StorkUser storkUser = new StorkUser();
         // Get attributes
         personalAttributeList = authnResponse.getPersonalAttributeList();
         ArrayList<PersonalAttribute> attrList = new ArrayList<PersonalAttribute>(
@@ -67,16 +66,17 @@ public class StorkAuthenticator {
             }
         }
 
-        storkUser.setDateOfBirth(getAttribute(nameValueMap, "dateOfBirth"));
-        storkUser.setSurname(getAttribute(nameValueMap, "surname"));
-        storkUser.setGivenName(getAttribute(nameValueMap, "givenName"));
+        StorkUser storkUser = new StorkUser(
+                getAttribute(nameValueMap, "givenName"),
+                getAttribute(nameValueMap, "surname"),
+                getAttribute(nameValueMap, "dateOfBirth"),
+                getAttribute(nameValueMap, "countryCodeOfBirth"),
+                getAttribute(nameValueMap, "nationalityCode"),
+                getAttribute(nameValueMap, "gender"),
+                getAttribute(nameValueMap, "canonicalResidenceAddress"),
+                getAttribute(nameValueMap, "textResidenceAddress"));
         storkUser.seteId(getAttribute(nameValueMap, "eIdentifier"));
         storkUser.setUsername(getAttribute(nameValueMap, "eIdentifier"));
-        storkUser.setTextResidenceAddress(getAttribute(nameValueMap, "textResidenceAddress"));
-        storkUser.setCanonicalResidenceAddress(getAttribute(nameValueMap, "canonicalResidenceAddress"));
-        storkUser.setGender(getAttribute(nameValueMap, "gender"));
-        storkUser.setNationalityCode(getAttribute(nameValueMap, "nationalityCode"));
-        storkUser.setCountryCodeOfBirth(getAttribute(nameValueMap, "countryCodeOfBirth"));
 
         storkUser.setStorkAttrs(storkAttrs);
 
