@@ -47,6 +47,7 @@ public class StorkServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		try {
+            // todo: make this portable
 			File f = new File(System.getProperty("jboss.server.config.dir"), "sp.properties");
 			InputStream is = new FileInputStream(f);
 			configs = SPUtil.loadConfigs(is);
@@ -143,6 +144,7 @@ public class StorkServlet extends HttpServlet {
     private void readXConfigs()  {
         try {
             JAXBContext ctx = JAXBContext.newInstance(SpocsStorkConfig.class);
+            // todo: make this portable
             File f = new File(System.getProperty("jboss.server.config.dir"), "storkconfig.xml");
             xconfigs = (SpocsStorkConfig) ctx.createUnmarshaller().unmarshal(f);
         } catch (Exception e) {
