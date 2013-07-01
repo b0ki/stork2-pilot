@@ -4,8 +4,7 @@
     <title>peps-redirect</title>
 </head>
 <body onload="document.redirectForm.submit();">
-<!-- todo: get url from config -->
-<form name="redirectForm"  action="https://peps-test.mju.gov.si/PEPS/ServiceProvider" method="post" target="_self" >
+<form name="redirectForm"  action="#{storkPostData.pepsUrl}" method="post" target="_self" >
     <input type="hidden" name="SAMLRequest" value="#{storkPostData.SAMLRequest}"/>
     <input type="hidden" name="country" value="#{storkPostData.citizen}"/>
     <!--<input type="submit"/>-->

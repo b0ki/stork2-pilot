@@ -87,10 +87,11 @@ public class StorkAuthenticator {
         return values == null || values.isEmpty() ? null : values.get(0);
     }
 
-    public void setStorkData(String citizen, String samlRequest) {
+    public void setStorkData(String citizen, String samlRequest, String pepsUrl) {
         log.debug("Setting stork data.");
         storkPostData.setCitizen(citizen);
         storkPostData.setSAMLRequest(samlRequest);
+        storkPostData.setPepsUrl(pepsUrl);
     }
 
 }

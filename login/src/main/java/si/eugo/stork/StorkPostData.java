@@ -13,6 +13,7 @@ import java.io.Serializable;
 public class StorkPostData implements Serializable {
     private String citizen;
     private String SAMLRequest;
+    private String pepsUrl;
 
     public String getCitizen() {
         return citizen;
@@ -28,5 +29,13 @@ public class StorkPostData implements Serializable {
 
     public void setSAMLRequest(String SAMLRequest) {
         this.SAMLRequest = SAMLRequest;
+    }
+
+    public String getPepsUrl() {
+        return pepsUrl;
+    }
+
+    public void setPepsUrl(String pepsUrl) {
+        this.pepsUrl = pepsUrl;
     }
 }

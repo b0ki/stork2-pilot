@@ -127,7 +127,7 @@ public class StorkServlet extends HttpServlet {
 
 		SAMLRequest = PEPSUtil.encodeSAMLToken(token);
 
-        authenticator.setStorkData(citizen, SAMLRequest);
+        authenticator.setStorkData(citizen, SAMLRequest, pepsUrl);
 
         log.debug("Redirecting to PEPS post facelet.");
 
