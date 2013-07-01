@@ -110,16 +110,6 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- Similarly to the JBoss Java EE 6 BOM above, the RichFaces BOM specifies the
-                versions of artifacts required for using RichFaces in your project. -->
-            <dependency>
-                <groupId>org.richfaces</groupId>
-                <artifactId>richfaces-bom</artifactId>
-                <version>4.2.2.Final</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
             <!-- STORK -->
             <!-- Stork Commons -->
             <dependency>

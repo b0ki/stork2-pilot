@@ -77,7 +77,7 @@ This application builds on top of standard eugo.gov.si UX approach and is built 
 System requirements
 -------------------
 
-All you need to build this project is Java 6.0 (Java SDK 1.6) or better, Maven 3.0 or better, and the RichFaces library.
+All you need to build this project is Java 6.0 (Java SDK 1.6) or better and Maven 3.0 or better.
 
 The application this project produces is designed to be run on JBoss AS 7. 
 

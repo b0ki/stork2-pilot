@@ -69,27 +69,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Import the RichFaces core library -->
-        <dependency>
-            <groupId>org.richfaces.core</groupId>
-            <artifactId>richfaces-core-impl</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>cssparser</artifactId>
-                    <groupId>net.sourceforge.cssparser</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>guava</artifactId>
-                    <groupId>com.google.guava</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- Import the RichFaces components -->
-        <dependency>
-            <groupId>org.richfaces.ui</groupId>
-            <artifactId>richfaces-components-ui</artifactId>
-        </dependency>
-
     </dependencies>
 
     <build>

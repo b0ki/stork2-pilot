@@ -26,15 +26,6 @@ Change the PROJECT_STAGE to 'Production' when putting the application into produ
         <param-value>Production</param-value>
     </context-param>
 
-    <context-param>
-        <param-name>org.richfaces.skin</param-name>
-        <param-value>plain</param-value>
-    </context-param>
-
-    <context-param>
-        <param-name>org.richfaces.resourceOptimization.enabled</param-name>
-        <param-value>true</param-value>
-    </context-param>
     <servlet>
         <servlet-name>initLoginServlet</servlet-name>
         <servlet-class>si.eugo.stork.InitLoginServlet</servlet-class>
