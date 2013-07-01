@@ -25,8 +25,9 @@ public class StorkAuthenticator {
 
     private static final Logger log = LoggerFactory.getLogger(StorkAuthenticator.class);
 
-    @Inject
-    private AuthenticatedUser authenticatedUser;
+    @Inject private AuthenticatedUser authenticatedUser;
+
+    @Inject private StorkPostData storkPostData;
 
     public void login(String samlResponse, String remoteHost) {
         STORKAuthnResponse authnResponse;
@@ -84,6 +85,12 @@ public class StorkAuthenticator {
     private static String getAttribute(Map<String, List<String>> nameValueMap, String key) {
         List<String> values = nameValueMap.get(key);
         return values == null || values.isEmpty() ? null : values.get(0);
+    }
+
+    public void setStorkData(String citizen, String samlRequest) {
+        log.debug("Setting stork data.");
+        storkPostData.setCitizen(citizen);
+        storkPostData.setSAMLRequest(samlRequest);
     }
 
 }

@@ -47,7 +47,7 @@ public class StorkServlet extends HttpServlet {
 	private String citizen;
 	private String returnUrl;
 
-    @Inject private StorkPostData storkPostData;
+    @Inject private StorkAuthenticator authenticator;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -127,13 +127,13 @@ public class StorkServlet extends HttpServlet {
 
 		SAMLRequest = PEPSUtil.encodeSAMLToken(token);
 
-        storkPostData.setCitizen(citizen);
-        storkPostData.setSAMLRequest(SAMLRequest);
+        authenticator.setStorkData(citizen, SAMLRequest);
 
         log.debug("Redirecting to PEPS post facelet.");
 
         resp.sendRedirect("storkLogin/stork-redirect.jsf");
 	}
+
 
     private void readXConfigs()  {
         try {
