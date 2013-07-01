@@ -62,7 +62,7 @@ Get the user data (attributes) obtained from Stork in CDI beans:
 
 .. or in facelets:
 
-     #{user}
+     #{storkUser}
 
 
 What is it?
