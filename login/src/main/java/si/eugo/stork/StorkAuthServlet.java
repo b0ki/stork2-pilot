@@ -1,8 +1,5 @@
 package si.eugo.stork;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.inject.Inject;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -13,14 +10,8 @@ import java.io.IOException;
 
 public class StorkAuthServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
-
-
-	private static final Logger log = LoggerFactory.getLogger(StorkAuthServlet.class.getName());
-
-
     @Inject
-    private AuthenticatedUser authenticatedUser;
+    private StorkAuthenticator authenticator;
 
     private String successPage;
 
@@ -34,7 +25,7 @@ public class StorkAuthServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
-        authenticatedUser.login(req.getParameter("SAMLResponse"), req.getRemoteHost());
+        authenticator.login(req.getParameter("SAMLResponse"), req.getRemoteHost());
         resp.sendRedirect(successPage);
     }
 
