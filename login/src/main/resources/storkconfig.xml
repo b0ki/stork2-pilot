@@ -3,37 +3,24 @@
 	<storkAttribute name="givenName" enabled="true" required="true" />
 	<storkAttribute name="surname" enabled="true" required="true" />
 	<storkAttribute name="dateOfBirth" enabled="true" required="true" />
-	<storkAttribute name="eMail" enabled="true" required="true" />
-	
-	<storkAttribute name="inheritedFamilyName" enabled="true"
-		required="false" />
-	<storkAttribute name="adoptedFamilyName" enabled="true"
-		required="false" />
-
-	<storkAttribute name="countryCodeOfBirth" enabled="true"
-		required="false" />
-	<storkAttribute name="nationalityCode" enabled="true"
-		required="false" />
-	<storkAttribute name="gender" enabled="true" required="false" />
-	
-	<storkAttribute name="canonicalResidenceAddress"
-		enabled="true" required="false" />
-	<storkAttribute name="residencePermit" enabled="true"
-		required="false" />
-	<storkAttribute name="maritalStatus" enabled="false" required="false" />
-	<storkAttribute name="textResidenceAddress" enabled="false"
-		required="false" />
+	<storkAttribute name="eMail" enabled="false" required="false" />
+	<storkAttribute name="inheritedFamilyName" enabled="false" required="false" />
+	<storkAttribute name="adoptedFamilyName" enabled="false" required="false" />
+	<storkAttribute name="countryCodeOfBirth" enabled="true" required="true" />
+	<storkAttribute name="nationalityCode" enabled="true" required="true" />
+	<storkAttribute name="gender" enabled="true" required="true" />
+    <!-- todo: canonicalResidenceAddress and textResidenceAddress must be required, but Nuša Vzorec doesn't provide them. -->
+    <storkAttribute name="canonicalResidenceAddress" enabled="true" required="false" />
+    <storkAttribute name="textResidenceAddress" enabled="true" required="false" />
+    <storkAttribute name="residencePermit" enabled="false" required="false" />
+    <storkAttribute name="maritalStatus" enabled="false" required="false" />
 	<storkAttribute name="title" enabled="false" required="false" />
-	
-	<storkAttribute name="pseudonym" enabled="false" required="false" />
+    <storkAttribute name="pseudonym" enabled="false" required="false" />
 	<storkAttribute name="age" enabled="false" required="false" />
 	<storkAttribute name="isAgeOver" enabled="false" required="false" />
 	<storkAttribute name="signedDoc" enabled="false" required="false" />
-	<storkAttribute name="citizenQAALevel" enabled="false"
-		required="false" />
+	<storkAttribute name="citizenQAALevel" enabled="false" required="false" />
 	<storkAttribute name="fiscalNumber" enabled="false" required="false" />
-	<storkAttribute name="citizen509Certificate" enabled="false"
-		required="false" />
-
+	<storkAttribute name="citizen509Certificate" enabled="false" required="false" />
 
 </config>
