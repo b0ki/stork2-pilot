@@ -9,29 +9,29 @@
 
         <h:messages globalOnly="true"/>
 
-        <h:panelGroup rendered="#{empty user}">
+        <h:panelGroup rendered="#{empty storkUser}">
             Please <h:outputLink value="#{request.contextPath}/initLogin">login in through Stork</h:outputLink> first.
         </h:panelGroup>
 
-        <h:form id="reg" styleClass="form" rendered="#{not empty user}">
+        <h:form id="reg" styleClass="form" rendered="#{not empty storkUser}">
             <fieldset>
                 <h3 class="category-title">Personal information</h3>
                 <ul>
                     <li class="row">
-                        <stork:personAttribute label="Given Name:" componentId="giveName" attributeValue="#{user.givenName}"/>
-                        <stork:personAttribute label="Family Name:" componentId="surname" attributeValue="#{user.surname}"/>
+                        <stork:personAttribute label="Given Name:" componentId="giveName" attributeValue="#{storkUser.givenName}"/>
+                        <stork:personAttribute label="Family Name:" componentId="surname" attributeValue="#{storkUser.surname}"/>
                     </li>
                     <li class="row">
-                        <stork:personAttribute label="Date of Birth:" componentId="dateOfBirth" attributeValue="#{user.dateOfBirth}"/>
-                        <stork:personAttribute label="Gender:" componentId="gender" attributeValue="#{user.gender}"/>
+                        <stork:personAttribute label="Date of Birth:" componentId="dateOfBirth" attributeValue="#{storkUser.dateOfBirth}"/>
+                        <stork:personAttribute label="Gender:" componentId="gender" attributeValue="#{storkUser.gender}"/>
                     </li>
                     <li class="row">
-                        <stork:personAttribute label="Nationality Code:" componentId="nationalityCode" attributeValue="#{user.nationalityCode}"/>
-                        <stork:personAttribute label="Birth Country Code:" componentId="countryCodeOfBirth" attributeValue="#{user.countryCodeOfBirth}"/>
+                        <stork:personAttribute label="Nationality Code:" componentId="nationalityCode" attributeValue="#{storkUser.nationalityCode}"/>
+                        <stork:personAttribute label="Birth Country Code:" componentId="countryCodeOfBirth" attributeValue="#{storkUser.countryCodeOfBirth}"/>
                     </li>
                     <li class="row">
-                        <stork:personAttribute label="Residence Address:" componentId="textResidenceAddress" attributeValue="#{user.textResidenceAddress}"/>
-                        <stork:personAttribute label="Canonical Residence Address:" componentId="canonicalResidenceAddress" attributeValue="#{user.canonicalResidenceAddress}"/>
+                        <stork:personAttribute label="Residence Address:" componentId="textResidenceAddress" attributeValue="#{storkUser.textResidenceAddress}"/>
+                        <stork:personAttribute label="Canonical Residence Address:" componentId="canonicalResidenceAddress" attributeValue="#{storkUser.canonicalResidenceAddress}"/>
                     </li>
                 </ul>
             </fieldset>

@@ -21,7 +21,7 @@ public class AuthenticatedUser implements Serializable {
         user = null;
     }
 
-    @Produces @Authenticated @Named
+    @Produces @Authenticated @Named("storkUser")
     public StorkUser getUser() {
         return user;
     }
