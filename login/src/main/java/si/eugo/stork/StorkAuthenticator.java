@@ -19,6 +19,8 @@ import java.util.Map;
 /**
  * @author Matija Mazi <br/>
  * @created 7/1/13 1:54 PM
+ *
+ * todo: test that injecting StorkAuthenticator into servlets works as expected.
  */
 @Stateless
 public class StorkAuthenticator {
